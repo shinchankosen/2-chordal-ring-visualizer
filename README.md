@@ -1,1 +1,3 @@
-# 2-chordal-ring-visualizer
+# 2-コーダルリングビジュアライザ
+
+Siv3D練習用
