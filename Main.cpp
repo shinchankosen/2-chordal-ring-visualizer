@@ -23,8 +23,6 @@ void Main() {
 
     double cen_x = 400, cen_y = 300;
 
-    // Rect area(0, 0, 0, 0), Area(50, 50, 700, 300), Brea(0, 0, 0, 0);
-
     while (System::Update()) {
         Circle circle(cen_x, cen_y, r / 5);
         if (circle.mouseOver()) {
@@ -50,7 +48,6 @@ void Main() {
         {
             Cursor::RequestStyle(CursorStyle::Hand);
         }
-        ///***********************
 
         if (SimpleGUI::Button(U"Color", Vec2(40, 70), 60))
         {
@@ -71,8 +68,6 @@ void Main() {
 
         if (SimpleGUI::Button(U"Mode", Vec2(40, 120), 60)) {
             mode ^= 1;
-            // if (mode) area = Area;
-            // else area = Brea;
             flag1 = false;
         }
 
@@ -84,13 +79,6 @@ void Main() {
             SimpleGUI::TextBox(Ea, Vec2(40, 160), 50);
             SimpleGUI::TextBox(Eb, Vec2(40, 200), 50);
 
-
-            // TextInput::UpdateText(Edges);
-
-            // area.draw(ColorF(0.3));
-
-            // font(Edges).draw(area.stretched(-20));
-
             if (SimpleGUI::Button(U"Clear", Vec2(220, 20), 60)) {
                 N.clear();
                 M.clear();
@@ -100,7 +88,6 @@ void Main() {
 
             if (SimpleGUI::Button(U"Draw", Vec2(300, 20), 60)) {
                 n = Parse<int32>(N.text);
-                // m = Parse<int32>(M.text);
                 Edges.clear();
                 flag1 = true;
             }
@@ -110,7 +97,6 @@ void Main() {
             for (int i = 0; i < n; i++) {
                 node << Vec2(r * sin(M_PI * 2 * i / n) + cen_x, -r * cos(M_PI * 2 * i / n) + cen_y);
                 Circle(node[i], dot).draw(c);
-                // font(i).draw(node[i].x * 1.1 - 40 - 10, node[i].y * 1.1 - 30 - 10, c);
             }
 
             if (SimpleGUI::Button(U"add_edge", Vec2(40, 240), 100)) {
@@ -146,8 +132,7 @@ void Main() {
             for (int i = 0; i < n; i++) {
                 node << Vec2(r * sin(M_PI * 2 * i / n) + cen_x, -r * cos(M_PI * 2 * i / n) + cen_y);
                 Circle(node[i], dot).draw(c);
-                // font(i).draw(node[i].x * 1.1 - 40 - 10, node[i].y * 1.1 - 30 - 10, c);
-            }
+           }
 
             for (int i = 0; i < n; i++) {
                 Line(node[i], node[(i + 1) % n]).draw(line_w, c);
@@ -155,17 +140,5 @@ void Main() {
                 Line(node[i], node[(i + d_2) % n]).draw(line_w, c);
             }
         }
-        
-        /*
-        // 線の幅 10px, 三角の幅 40px, 高さ 80px の矢印を描く
-        Line(450, 450, 600, 100)
-            .drawArrow(10, Vec2(40, 80), Palette::Orange);
-
-        const double t = Scene::Time();
-
-        */
-
-        
-        
     }
 }
