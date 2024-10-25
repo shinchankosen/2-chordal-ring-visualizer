@@ -75,7 +75,6 @@ void Main() {
 
         if (mode) {
             SimpleGUI::TextBox(N, Vec2(40, 20), 50);
-            // SimpleGUI::TextBox(M, Vec2(120, 20), 50);
             SimpleGUI::TextBox(Ea, Vec2(40, 160), 50);
             SimpleGUI::TextBox(Eb, Vec2(40, 200), 50);
 
@@ -106,7 +105,6 @@ void Main() {
             for (auto& edge : Edges) {
                 Line(node[edge.x], node[edge.y]).draw(line_w, c);
             }
-
         }
         else {
             SimpleGUI::TextBox(N, Vec2(40, 20), 50);
